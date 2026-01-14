@@ -1,0 +1,139 @@
+config:
+  receivers:
+  - idn: Rohde&Schwarz,ESU-40,100105/040,4.73
+    ip: 172.29.10.109
+    mac: 00:e0:33:62:47:75
+    name: ESU40
+    protocol: tcp
+    settings:
+      att:
+        mode: auto
+        modes:
+        - auto
+        - manual
+        range:
+        - 0
+        - 75
+        - 5
+        value: 10
+      coupling:
+        type: AC
+        types:
+        - AC
+        - DC
+      detector:
+        type: aver
+        types:
+        - aver
+        - peak
+      measure:
+        input: 1
+        marker: 1
+        time:
+          mode: auto
+          modes:
+          - auto
+          - manual
+          value: 250
+      mtime:
+        unit: ms
+        value: 100.0
+      rbw:
+        mode: auto
+        modes:
+        - auto
+        - manual
+        value: 12.0
+      span:
+        value: 1000
+  - idn: Rohde&Schwarz,FSV3030,1330.5000K30/102228,2.10
+    ip: 172.29.10.110
+    mac: 00:E0:33:0E:C6:66
+    name: FSV3030
+    protocol: tcp
+    settings:
+      att:
+        mode: auto
+        modes:
+        - auto
+        - manual
+        value: 0
+      bandwidth:
+        unit: kHz
+        value: 50.0
+      coupling:
+        type: auto
+        types:
+        - auto
+        - AC
+        - DC
+      input:
+        range:
+        - 1
+        - 2
+        value: 1
+      marker:
+        range:
+        - 1
+        - 2
+        - 3
+        - 4
+        value: 1
+      mtime:
+        unit: ms
+        value: 100.0
+      preamp:
+        mode: 'off'
+        modes:
+        - 'off'
+        - '15'
+        - '30'
+      ref-level:
+        mode: auto
+        modes:
+        - auto
+        - manual
+        value: -22.05
+      span:
+        unit: kHz
+        value: 12.0
+  transmitters:
+  - idn: Rohde&Schwarz,SMF100A,1167.0000k02/104373,3.1.19.15-3.20.390.24
+    ip: 172.29.10.111
+    mac: 00:e0:33:10:a6:0d
+    name: SMF100A
+    protocol: tcp
+    settings:
+      att:
+        mode: auto
+        modes:
+        - auto
+        - manual
+        range:
+        - 0
+        - 110
+        - 10
+        value: 0
+      power:
+        unit: dBuV
+        value: 77
+  - idn: Rohde&Schwarz,SMA100B,1419.8888K02/0,4.00.033
+    ip: 172.29.10.111
+    mac: 00:e0:33:10:a6:0d
+    name: SMA100B
+    protocol: tcp
+    settings: {}
+init:
+  selected-receiver: FSV3030
+  selected-transmitter: SMF100A
+measurement:
+  repeat:
+    count: 3
+    state: 'false'
+    trigger: 20.0
+  wait-time: 0.5
+plot:
+  format:
+    color: green
+    line-style: '-'
+    marker: .
