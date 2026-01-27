@@ -103,7 +103,7 @@ def result_file_name(name, result_list, header):
     second = "%02d" % now.second
     prefix_name = year + month + day + "_" + hour + minute + second + "_"
     full_name_of_file = prefix_name + name + ".csv"
-    result_txt = open(f"C:\\Users\\bglowacz\\PycharmProjects\\Praca IL-PIB\\pliki wynikowe txt\\{full_name_of_file}",
+    result_txt = open(f"C:\\Users\\bglowacz\\PycharmProjects\\Praca_IL-PIB\\pliki wynikowe txt\\{full_name_of_file}",
                       "w")
     result_txt.write(f"f [Hz];U [{header}]\n")
     for x in result_list:
@@ -116,7 +116,7 @@ keithley2000.connect()
 keithley2000.IDN()
 # keithley2000.AC_or_DC()
 
-HMF2550 = SignalGenerator("ASRL5::INSTR", "HMF2550")
+HMF2550 = SignalGenerator("ASRL3::INSTR", "HMF2550")
 HMF2550.connect()
 HMF2550.IDN()
 HMF2550.power_on_off("ON")
